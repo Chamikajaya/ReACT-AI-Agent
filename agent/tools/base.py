@@ -1,5 +1,5 @@
 import logging
-from typing import Dict, Any, Optional
+from typing import Dict, Any
 
 from agent.exceptions import ToolExecutionError
 
@@ -24,7 +24,7 @@ class Tool:
         except Exception as e:
             err_message = f"Error executing the tool {self.name} with args {args}"
             logger.error(err_message, exc_info=True)
-            return {"error" : err_message}
+            raise ToolExecutionError(f"{err_message}: {str(e)}") from e
     
     
     def __str__(self) -> str:
