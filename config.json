@@ -1,0 +1,10 @@
+{
+  "api": {
+    "default_timeout": 15,
+    "max_retries": 3,
+    "retry_delay": 1,
+    "weather_base_url": "https://api.openweathermap.org/data/2.5",
+    "units": "metric"
+  },
+  "model": "llama-3.3-70b-versatile"
+}
