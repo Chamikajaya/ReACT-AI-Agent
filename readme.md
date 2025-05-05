@@ -86,6 +86,7 @@ Answer: The current weather in Kalutara is 28.5°C with cloudy conditions. Tomor
 
 ### Screenshots 📸
 
+![alt text](./screenshots/image.png)
 ![alt text](./screenshots/image-1.png)
 ![alt text](./screenshots/image-2.png)
 ![alt text](./screenshots/image-3.png)
