@@ -109,6 +109,11 @@ class Agent:
         Use Action to run one of the actions available to you - then return PAUSE.
         Observation will be the result of running those actions.
         
+        IMPORTANT: If you receive a greeting or non-weather query like "hello", "what's up", "how are you", simply respond with a friendly greeting and do not use any tools.
+        
+        IMPORTANT: If the user doesn't specify a location but has mentioned a location in a previous question, use that location.
+
+        
         Your available actions are:
         
         {tools_description}
@@ -199,7 +204,8 @@ class Agent:
         self, 
         query: str, 
         callback: Optional[Callable[[str], None]] = None,
-        max_iterations: Optional[int] = None
+        max_iterations: Optional[int] = None,
+        reset_conversation=False
     ) -> str:
         """
         Run the ReACT loop until an answer is reached or max iterations exceeded.
@@ -216,8 +222,9 @@ class Agent:
         # Use override max_iterations if provided
         max_iterations = max_iterations or self.max_iterations
         
-        # Reset the conversation
-        self.reset()
+        # Only reset if explicitly requested or this is the first query
+        if reset_conversation or not self.messages:
+            self.reset()
         
         # Add the user's query
         self.messages.append({"role": "user", "content": f"Question: {query}"})
