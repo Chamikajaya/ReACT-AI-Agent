@@ -74,7 +74,7 @@ class Agent:
     
     def _get_default_model(self) -> str:
         """Get the default model name."""
-        return os.environ.get("GROQ_MODEL", "llama-3.3-70b-versatile")
+        return os.environ.get("GROQ_MODEL", "llama-3.1-8b-instant")
         
     
     def add_tool(self, tool: Tool) -> None:

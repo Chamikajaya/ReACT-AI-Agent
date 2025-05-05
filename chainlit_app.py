@@ -25,7 +25,7 @@ def create_tools() -> Dict[str, Tool]:
 # Initialize the agent outside the chat handler for persistence
 config = load_config()
 tools = create_tools()
-model = config.get("model") or os.environ.get("GROQ_MODEL", "llama-3.3-70b-versatile")
+model = config.get("model") or os.environ.get("GROQ_MODEL", "llama-3.1-8b-instant")
 api_key = os.environ.get("GROQ_API_KEY")
 
 agent = Agent(

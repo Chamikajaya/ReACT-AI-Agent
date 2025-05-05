@@ -6,5 +6,5 @@
     "weather_base_url": "https://api.openweathermap.org/data/2.5",
     "units": "metric"
   },
-  "model": "llama-3.3-70b-versatile"
+  "model": "llama-3.1-8b-instant"
 }
