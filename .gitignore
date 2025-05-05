@@ -6,3 +6,5 @@ __pycache__/
 *.pyc
 agent/__pycache__/
 utils/__pycache__/
+.vscode/
+agent/tools/weather/__pycache__/
